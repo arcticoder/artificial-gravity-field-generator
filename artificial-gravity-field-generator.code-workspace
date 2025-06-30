@@ -19,17 +19,34 @@
 		{
 			"name": "unified-lqg-qft",
 			"path": "../unified-lqg-qft"
+		},
+		{
+			"name": "warp-bubble-connection-curvature",
+			"path": "../warp-bubble-connection-curvature"
+		},
+		{
+			"name": "warp-curvature-analysis",
+			"path": "../warp-curvature-analysis"
+		},
+		{
+			"name": "warp-bubble-einstein-equations",
+			"path": "../warp-bubble-einstein-equations"
+		},
+		{
+			"name": "warp-signature-workflow",
+			"path": "../warp-signature-workflow"
+		},
+		{
+			"name": "polymerized-lqg-replicator-recycler",
+			"path": "../polymerized-lqg-replicator-recycler"
 		}
 	],
 	"settings": {
 		"python.defaultInterpreterPath": "C:\\Program Files\\Python313\\python.exe",
 		"files.exclude": {
 			"**/.git": true,
-			"**/node_modules": true,
 			"**/__pycache__": true,
-			"**/.pytest_cache": true,
-			"**/venv": true,
-			"**/.venv": true
+			"**/.pytest_cache": true
 		},
 		"powershell.cwd": "artificial-gravity-field-generator (main)"
 	},
