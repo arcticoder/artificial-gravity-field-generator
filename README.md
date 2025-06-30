@@ -355,7 +355,9 @@ The unified artificial gravity generator incorporates **16+ enhancement technolo
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) for details.
+This project is released under The Unlicense - See [LICENSE](LICENSE) for details.
+
+**The Unlicense** makes this project public domain, allowing unrestricted use, modification, and distribution without attribution requirements.
 
 ## Contributing
 
