@@ -1,0 +1,3 @@
+# enhanced_schwinger_effect
+
+...existing content from original file...
