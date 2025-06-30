@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"name": "artificial-gravity-field-generator (main)",
+			"path": "."
+		},
+		{
+			"name": "warp-bubble-optimizer",
+			"path": "../warp-bubble-optimizer"
+		},
+		{
+			"name": "warp-field-coils",
+			"path": "../warp-field-coils"
+		},
+		{
+			"name": "polymerized-lqg-matter-transporter",
+			"path": "../polymerized-lqg-matter-transporter"
+		},
+		{
+			"name": "unified-lqg-qft",
+			"path": "../unified-lqg-qft"
+		}
+	],
+	"settings": {
+		"python.defaultInterpreterPath": "C:\\Program Files\\Python313\\python.exe",
+		"files.exclude": {
+			"**/.git": true,
+			"**/node_modules": true,
+			"**/__pycache__": true,
+			"**/.pytest_cache": true,
+			"**/venv": true,
+			"**/.venv": true
+		},
+		"powershell.cwd": "artificial-gravity-field-generator (main)"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-python.python",
+			"ms-vscode.cpptools",
+			"james-yu.latex-workshop"
+		]
+	}
+}
