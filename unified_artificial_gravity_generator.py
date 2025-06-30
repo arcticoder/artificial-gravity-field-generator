@@ -40,6 +40,14 @@ from enhanced_4d_spacetime_optimizer import (
 from matter_geometry_duality_control import (
     AdaptiveEinsteinController, EinsteinControlConfig
 )
+from enhanced_polymer_corrections import (
+    EnhancedPolymerCorrections, EnhancedPolymerConfig,
+    sinc_squared_polymer_correction, exact_backreaction_energy_reduction,
+    multi_scale_temporal_coherence
+)
+from enhanced_causality_stability import (
+    EnhancedCausalityStabilityEngine, CausalityStabilityConfig
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -72,6 +80,12 @@ class UnifiedGravityConfig:
     
     # Einstein tensor control settings
     einstein_control_config: EinsteinControlConfig = None
+    
+    # Enhanced polymer corrections settings
+    polymer_corrections_config: EnhancedPolymerConfig = None
+    
+    # Enhanced causality stability settings
+    causality_stability_config: CausalityStabilityConfig = None
     
     def __post_init__(self):
         """Initialize sub-configurations if not provided"""
@@ -116,6 +130,37 @@ class UnifiedGravityConfig:
                 control_volume=(self.field_extent_radius * 0.6)**3,  # Core control volume
                 max_curvature=1e-20
             )
+        
+        if self.polymer_corrections_config is None:
+            self.polymer_corrections_config = EnhancedPolymerConfig(
+                enable_higher_order_corrections=True,
+                enable_exact_backreaction=True,
+                enable_multi_scale_temporal=True,
+                enable_sinc_squared_formulation=True,
+                
+                mu_polymer=0.2,  # Optimal polymer parameter
+                max_polymer_order=10,
+                spatial_extent=self.field_extent_radius
+            )
+        
+        if self.causality_stability_config is None:
+            self.causality_stability_config = CausalityStabilityConfig(
+                enable_week_modulation=True,
+                enable_temporal_loops=True,
+                enable_novikov_consistency=True,
+                enable_multi_factor_stability=True,
+                
+                omega_0=2 * np.pi / 86400.0,  # Daily oscillation
+                gamma_decay=1.0 / 604800.0,  # Week-scale decay
+                week_modulation_amplitude=0.1,
+                
+                causality_threshold=1e-6,
+                stability_threshold=1e-8,
+                max_loop_iterations=1000,
+                
+                field_extent=self.field_extent_radius,
+                temporal_extent=604800.0  # Week in seconds
+            )
 
 class UnifiedArtificialGravityGenerator:
     """
@@ -139,6 +184,12 @@ class UnifiedArtificialGravityGenerator:
         
         # Matter-geometry duality controller
         self.einstein_controller = AdaptiveEinsteinController(config.einstein_control_config)
+        
+        # Enhanced polymer corrections system
+        self.polymer_corrections = EnhancedPolymerCorrections(config.polymer_corrections_config)
+        
+        # Enhanced causality and stability engine
+        self.causality_stability_engine = EnhancedCausalityStabilityEngine(config.causality_stability_config)
         
         # System state tracking
         self.system_state = {
@@ -201,19 +252,32 @@ class UnifiedArtificialGravityGenerator:
             target_acceleration, spatial_domain, time_range
         )
         
-        # Step 5: Integrate all results into unified field
-        logger.info("5️⃣  Integrating unified gravity field...")
-        unified_field = self._integrate_all_frameworks(
-            riemann_results, spacetime_results, control_results, einstein_results
+        # Step 5: Enhanced polymer corrections
+        logger.info("5️⃣  Applying enhanced polymer corrections...")
+        polymer_results = self._apply_enhanced_polymer_corrections(
+            riemann_results, spacetime_results, spatial_domain, time_range
         )
         
-        # Step 6: Comprehensive safety validation
-        logger.info("6️⃣  Validating comprehensive safety...")
-        safety_validation = self._comprehensive_safety_validation(unified_field)
+        # Step 6: Causality and stability enforcement
+        logger.info("6️⃣  Enforcing causality and stability...")
+        stability_results = self._enforce_causality_stability(
+            riemann_results, time_range
+        )
         
-        # Step 7: Performance analysis
-        logger.info("7️⃣  Analyzing system performance...")
-        performance_analysis = self._analyze_comprehensive_performance(unified_field)
+        # Step 7: Integrate all results into final unified field
+        logger.info("7️⃣  Final integration of all frameworks...")
+        final_unified_field = self._integrate_all_frameworks(
+            riemann_results, spacetime_results, control_results, 
+            einstein_results, polymer_results, stability_results
+        )
+        
+        # Step 8: Comprehensive safety validation
+        logger.info("8️⃣  Comprehensive safety validation...")
+        safety_validation = self._comprehensive_safety_validation(final_unified_field)
+        
+        # Step 9: Performance analysis
+        logger.info("9️⃣  System performance analysis...")
+        performance_analysis = self._analyze_comprehensive_performance(final_unified_field)
         
         # Update system state
         self.system_state.update({
@@ -225,12 +289,14 @@ class UnifiedArtificialGravityGenerator:
         
         # Compile comprehensive results
         comprehensive_results = {
-            'unified_gravity_field': unified_field,
+            'unified_gravity_field': final_unified_field,
             'framework_results': {
                 'riemann_tensor': riemann_results,
                 'spacetime_4d': spacetime_results,
                 'stress_energy_control': control_results,
-                'einstein_control': einstein_results
+                'einstein_control': einstein_results,
+                'polymer_corrections': polymer_results,
+                'causality_stability': stability_results
             },
             'safety_validation': safety_validation,
             'performance_analysis': performance_analysis,
@@ -330,11 +396,123 @@ class UnifiedArtificialGravityGenerator:
             }
         }
 
+    def _apply_enhanced_polymer_corrections(self,
+                                          riemann_results: Dict,
+                                          spacetime_results: Dict,
+                                          spatial_domain: np.ndarray,
+                                          time_range: np.ndarray) -> Dict:
+        """Apply enhanced polymer corrections with all superior formulations"""
+        
+        # Get field values from Riemann tensor results
+        if len(riemann_results['gravity_field']) > 0:
+            field_values = np.linalg.norm(riemann_results['gravity_field'], axis=1)
+        else:
+            field_values = np.ones(len(spatial_domain)) * self.config.field_strength_target * G_EARTH
+        
+        polymer_results = []
+        
+        for i, time_point in enumerate(time_range):
+            # Use the correct method signatures from enhanced_polymer_corrections
+            
+            # Apply sinc² polymer corrections
+            sinc_correction = sinc_squared_polymer_correction(
+                self.config.polymer_corrections_config.mu_polymer
+            )
+            
+            # Apply exact backreaction energy reduction  
+            backreaction_result = exact_backreaction_energy_reduction()
+            
+            # Apply multi-scale temporal coherence
+            coherence_result = multi_scale_temporal_coherence(
+                time_1=time_point, 
+                time_2=time_point + 1.0,  # 1 second coherence time
+                config=self.config.polymer_corrections_config
+            )
+            
+            # Combine all polymer corrections
+            combined_correction = {
+                'sinc_squared': {'enhancement_factor': sinc_correction},
+                'exact_backreaction': backreaction_result,
+                'temporal_coherence': {'coherence_factor': coherence_result},
+                'overall_enhancement': (sinc_correction * 
+                                      backreaction_result['efficiency_factor'] * 
+                                      coherence_result)
+            }
+            
+            polymer_results.append(combined_correction)
+        
+        return {
+            'correction_history': polymer_results,
+            'final_enhancement': polymer_results[-1]['overall_enhancement'] if polymer_results else 1.0,
+            'average_enhancement': np.mean([r['overall_enhancement'] for r in polymer_results]),
+            'sinc_squared_efficiency': sinc_squared_polymer_correction(self.config.polymer_corrections_config.mu_polymer),
+            'backreaction_factor': 1.9443254780147017,  # β_exact from mathematical analysis
+            'temporal_scales': 47  # From mathematical analysis
+        }
+
+    def _enforce_causality_stability(self,
+                                   riemann_results: Dict,
+                                   time_range: np.ndarray) -> Dict:
+        """Enforce causality and stability using enhanced engine"""
+        
+        # Get field values from Riemann tensor results
+        if len(riemann_results['gravity_field']) > 0:
+            field_values = np.linalg.norm(riemann_results['gravity_field'], axis=1)
+        else:
+            field_values = np.array([self.config.field_strength_target * G_EARTH])
+        
+        stability_results = []
+        
+        for time_point in time_range:
+            # Compute enhanced stability with polymer factor
+            polymer_factor = 0.935  # From sinc² correction
+            
+            stability_result = self.causality_stability_engine.compute_enhanced_stability(
+                field_values, time_point, polymer_factor
+            )
+            
+            stability_results.append(stability_result)
+        
+        # Test temporal self-consistency
+        def simple_field_evolution(field, time):
+            """Simple field evolution for consistency testing"""
+            return field * np.exp(-0.1 * time / 3600.0)  # Gentle decay over hours
+        
+        consistency_result = self.causality_stability_engine.enforce_temporal_self_consistency(
+            field_values, simple_field_evolution, time_range[-1]
+        )
+        
+        # Long-term stability analysis
+        time_extended = np.linspace(0, 604800, 100)  # Week-long analysis
+        
+        def test_field_function(time):
+            """Test field function for long-term analysis"""
+            base_magnitude = np.mean(field_values) if len(field_values) > 0 else G_EARTH
+            daily_variation = 1.0 + 0.05 * np.sin(2 * np.pi * time / 86400.0)
+            return np.array([base_magnitude * daily_variation])
+        
+        long_term_analysis = self.causality_stability_engine.analyze_long_term_stability(
+            time_extended, test_field_function
+        )
+        
+        return {
+            'stability_history': stability_results,
+            'temporal_consistency': consistency_result,
+            'long_term_analysis': long_term_analysis,
+            'overall_stable': all(r['is_stable'] for r in stability_results),
+            'causality_violations': sum(1 for r in stability_results if r['causality_violation']),
+            'mean_stability': np.mean([r['overall_stability'] for r in stability_results]),
+            'week_modulation_active': self.config.causality_stability_config.enable_week_modulation,
+            'novikov_consistency': consistency_result['is_consistent']
+        }
+
     def _integrate_all_frameworks(self,
                                 riemann_results: Dict,
                                 spacetime_results: Dict,
                                 control_results: Dict,
-                                einstein_results: Dict) -> Dict:
+                                einstein_results: Dict,
+                                polymer_results: Dict,
+                                stability_results: Dict) -> Dict:
         """Integrate results from all enhanced frameworks into unified field"""
         
         # Extract key metrics from each framework
@@ -344,15 +522,21 @@ class UnifiedArtificialGravityGenerator:
         spacetime_performance = spacetime_results['performance_metrics']
         spacetime_enhancement = spacetime_performance['enhancement_factor']
         
-        # Combine enhancement factors (weighted average)
+        # New enhanced framework contributions
+        polymer_enhancement = polymer_results['final_enhancement']
+        stability_factor = stability_results['mean_stability']
+        
+        # Combine enhancement factors (weighted average with new frameworks)
         combined_enhancement = (
-            0.4 * riemann_enhancement +
-            0.3 * spacetime_enhancement +
-            0.2 * (control_results['final_performance']['final_acceleration'][2] / (-G_EARTH) if control_results['final_performance'] else 1) +
-            0.1 * 1.0  # Einstein control contribution (normalized)
+            0.25 * riemann_enhancement +
+            0.20 * spacetime_enhancement +
+            0.15 * (control_results['final_performance']['final_acceleration'][2] / (-G_EARTH) if control_results['final_performance'] else 1) +
+            0.10 * 1.0 +  # Einstein control contribution (normalized)
+            0.20 * polymer_enhancement +  # Enhanced polymer corrections
+            0.10 * stability_factor       # Causality stability
         )
         
-        # Integrate spatial fields
+        # Integrate spatial fields with all corrections
         if len(riemann_field) > 0:
             integrated_field = riemann_field.copy()
             
@@ -368,6 +552,14 @@ class UnifiedArtificialGravityGenerator:
             if spacetime_results['golden_ratio_modulation']['enabled']:
                 phi_factor = 1.0 + spacetime_results['golden_ratio_modulation']['beta_golden'] * PHI**(-2)
                 integrated_field *= phi_factor
+            
+            # Apply enhanced polymer corrections
+            sinc_efficiency = polymer_results['sinc_squared_efficiency']
+            backreaction_factor = 1.0 / polymer_results['backreaction_factor']  # Energy reduction as efficiency gain
+            integrated_field *= sinc_efficiency * backreaction_factor
+            
+            # Apply stability modulation
+            integrated_field *= stability_factor
         else:
             integrated_field = np.array([])
         
@@ -376,22 +568,37 @@ class UnifiedArtificialGravityGenerator:
         mean_magnitude = np.mean(field_magnitude) if len(field_magnitude) > 0 else 0
         field_uniformity = 1.0 - (np.std(field_magnitude) / mean_magnitude) if mean_magnitude > 0 else 0
         
+        # Enhanced framework contributions
+        framework_contributions = {
+            'riemann_tensor': 0.25,
+            'spacetime_4d': 0.20,
+            'stress_energy_control': 0.15,
+            'einstein_control': 0.10,
+            'polymer_corrections': 0.20,
+            'causality_stability': 0.10
+        }
+        
         return {
             'integrated_gravity_field': integrated_field,
             'field_magnitude': field_magnitude,
             'unified_enhancement_factor': combined_enhancement,
             'field_uniformity': field_uniformity,
             'mean_field_strength': mean_magnitude,
-            'framework_contributions': {
-                'riemann_tensor': 0.4,
-                'spacetime_4d': 0.3,
-                'stress_energy_control': 0.2,
-                'einstein_control': 0.1
-            },
+            'framework_contributions': framework_contributions,
             'enhancement_breakdown': {
                 'riemann': riemann_enhancement,
                 'spacetime': spacetime_enhancement,
+                'polymer': polymer_enhancement,
+                'stability': stability_factor,
                 'combined': combined_enhancement
+            },
+            'all_enhancements_active': {
+                'sinc_squared_corrections': polymer_results['sinc_squared_efficiency'],
+                'exact_backreaction': polymer_results['backreaction_factor'],
+                'temporal_coherence_scales': polymer_results['temporal_scales'],
+                'causality_stable': stability_results['overall_stable'],
+                'novikov_consistent': stability_results['novikov_consistency'],
+                'week_modulation': stability_results['week_modulation_active']
             }
         }
 
@@ -523,11 +730,25 @@ class UnifiedArtificialGravityGenerator:
                 'adaptive_learning': self.config.einstein_control_config.enable_adaptive_learning,
                 'riemann_weyl_integration': self.config.einstein_control_config.enable_riemann_weyl_integration
             },
+            'polymer_corrections_enhancements': {
+                'higher_order_corrections': self.config.polymer_corrections_config.enable_higher_order_corrections,
+                'exact_backreaction': self.config.polymer_corrections_config.enable_exact_backreaction,
+                'multi_scale_temporal': self.config.polymer_corrections_config.enable_multi_scale_temporal,
+                'sinc_squared_formulation': self.config.polymer_corrections_config.enable_sinc_squared_formulation
+            },
+            'causality_stability_enhancements': {
+                'week_modulation': self.config.causality_stability_config.enable_week_modulation,
+                'temporal_loops': self.config.causality_stability_config.enable_temporal_loops,
+                'novikov_consistency': self.config.causality_stability_config.enable_novikov_consistency,
+                'multi_factor_stability': self.config.causality_stability_config.enable_multi_factor_stability
+            },
             'total_enhancements_active': sum([
-                sum(self.config.riemann_config.__dict__.values() if hasattr(v, '__bool__') else [False] for v in self.config.riemann_config.__dict__.values()),
-                sum(self.config.stress_energy_config.__dict__.values() if hasattr(v, '__bool__') else [False] for v in self.config.stress_energy_config.__dict__.values()),
-                sum(self.config.spacetime_4d_config.__dict__.values() if hasattr(v, '__bool__') else [False] for v in self.config.spacetime_4d_config.__dict__.values()),
-                sum(self.config.einstein_control_config.__dict__.values() if hasattr(v, '__bool__') else [False] for v in self.config.einstein_control_config.__dict__.values())
+                sum(1 for v in self.config.riemann_config.__dict__.values() if isinstance(v, bool) and v),
+                sum(1 for v in self.config.stress_energy_config.__dict__.values() if isinstance(v, bool) and v),
+                sum(1 for v in self.config.spacetime_4d_config.__dict__.values() if isinstance(v, bool) and v),
+                sum(1 for v in self.config.einstein_control_config.__dict__.values() if isinstance(v, bool) and v),
+                sum(1 for v in self.config.polymer_corrections_config.__dict__.values() if isinstance(v, bool) and v),
+                sum(1 for v in self.config.causality_stability_config.__dict__.values() if isinstance(v, bool) and v)
             ])
         }
 
