@@ -34,7 +34,7 @@ This project represents the **first unified artificial gravity system** integrat
 
 ### **1. Enhanced Local Gravitational Acceleration Fields**
 
-```latex
+```math
 % IMPROVED: Stochastic Riemann tensor with golden ratio stability
 \vec{a}_{\text{enhanced}}(\vec{r}, t) = -⟨R^{\mu}_{\ \nu\rho\sigma}(r,t)⟩ u^{\nu} u^{\rho} s^{\sigma} + \Sigma_{\text{temporal}}(μ,ν)
 
@@ -47,7 +47,7 @@ This project represents the **first unified artificial gravity system** integrat
 
 ### **2. Enhanced Inertial Damper Integration**
 
-```latex
+```math
 % IMPROVED: Stress-energy tensor backreaction integration
 \vec{a}_{\text{total}} = \vec{a}_{\text{base}} + \vec{a}_{\text{curvature}} + G^{-1} \cdot 8\pi T^{\text{jerk}}_{\mu\nu}
 
@@ -60,7 +60,7 @@ T^{\text{jerk}}_{\mu\nu} = \begin{bmatrix} \frac{1}{2}\rho_{\text{eff}}\|\vec{j}
 
 ### **3. Enhanced 4D Spacetime Ansätze**
 
-```latex
+```math
 % IMPROVED: Enhanced polymer corrections with exact backreaction
 g(r,t) = g_{\text{target}} \cdot f_{\text{profile}}(r) \cdot f_{\text{temporal}}(t) \cdot \beta_{\text{polymer}} \cdot \beta_{\text{exact}}
 
@@ -73,7 +73,7 @@ f_{\text{temporal}}(t) = \frac{1}{2}\left[1 + \tanh\left(\frac{t-t_0}{\tau_{\tex
 
 ### **4. Enhanced Einstein Tensor Control Systems**
 
-```latex
+```math
 % IMPROVED: Matter-geometry duality with direct reconstruction
 G_{\mu\nu}^{\text{controlled}} = G_{\mu\nu}^{\text{target}} + \Delta G_{\mu\nu}^{\text{feedback}}
 
