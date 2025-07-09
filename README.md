@@ -1,5 +1,14 @@
 # Artificial Gravity Field Generator
 
+## Related Repositories
+
+- [energy](https://github.com/arcticoder/energy): Central hub for all advanced energy, spacetime, and quantum gravity research. This artificial gravity project is fully integrated with the energy framework for system-level breakthroughs and documentation.
+- [lqg-ftl-metric-engineering](https://github.com/arcticoder/lqg-ftl-metric-engineering): Provides the FTL metric engineering foundation that this artificial gravity system supports, enabling zero-exotic-energy spacetime manipulation.
+- [warp-field-coils](https://github.com/arcticoder/warp-field-coils): Supplies enhanced inertial damper and structural integrity field technology, directly used in artificial gravity implementations.
+- [polymerized-lqg-matter-transporter](https://github.com/arcticoder/polymerized-lqg-matter-transporter): Shares mathematical frameworks for spacetime manipulation and H∞ control, co-developed with this project.
+
+All repositories are part of the [arcticoder](https://github.com/arcticoder) ecosystem and link back to the energy framework for unified UQ, documentation, and integration.
+
 **🌌 LQG FTL Metric Engineering Artificial Gravity Support**
 
 Revolutionary artificial gravity field generation technology providing **critical spacetime manipulation capabilities** for the LQG FTL Metric Engineering framework. Integrates enhanced Riemann tensor dynamics, advanced stress-energy control, 4D spacetime optimization, matter-geometry duality, and quantum geometric field generation for unprecedented artificial gravity supporting FTL operations.
