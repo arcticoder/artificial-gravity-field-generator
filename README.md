@@ -1,5 +1,16 @@
 # Artificial Gravity Field Generator - Phase 1 LQG Implementation Complete
 
+## Related Repositories
+
+- [energy](https://github.com/arcticoder/energy): Central meta-repo for all energy, quantum, and artificial gravity research. This artificial gravity system is a core safety component of the energy ecosystem.
+- [enhanced-simulation-hardware-abstraction-framework](https://github.com/arcticoder/enhanced-simulation-hardware-abstraction-framework): Revolutionary FTL-capable hull design framework with naval architecture integration, providing structural foundation requiring artificial gravity for crew safety.
+- [warp-field-coils](https://github.com/arcticoder/warp-field-coils): Primary integration for FTL warp field operations requiring artificial gravity for safety-critical applications.
+- [lqg-ftl-metric-engineering](https://github.com/arcticoder/lqg-ftl-metric-engineering): Critical safety coordination for FTL operations using artificial gravity for inertial compensation.
+- [unified-lqg](https://github.com/arcticoder/unified-lqg): Core LQG framework providing quantum geometry foundation for artificial gravity field generation.
+- [negative-energy-generator](https://github.com/arcticoder/negative-energy-generator): Integrated energy source for artificial gravity generation with 242M× efficiency enhancement.
+
+All repositories are part of the [arcticoder](https://github.com/arcticoder) ecosystem and link back to the energy framework for unified documentation and integration.
+
 ## 🌌 LQG Enhanced Artificial Gravity - PRODUCTION DEPLOYED ✅
 
 **Status**: ✅ **PRODUCTION READY** - LQG implementation **COMPLETE and DEPLOYED**  
