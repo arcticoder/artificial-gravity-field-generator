@@ -1,24 +1,23 @@
-# Artificial Gravity Field Generator - Phase 1 LQG Implementation Complete
+# Artificial Gravity Field Generator — Research/Testbed
 
-## Related Repositories
+## Related Repositories (research references)
 
-- [energy](https://github.com/arcticoder/energy): Central meta-repo for all energy, quantum, and artificial gravity research. This artificial gravity system is a core safety component of the energy ecosystem.
-- [enhanced-simulation-hardware-abstraction-framework](https://github.com/arcticoder/enhanced-simulation-hardware-abstraction-framework): Revolutionary FTL-capable hull design framework with naval architecture integration, providing structural foundation requiring artificial gravity for crew safety.
-- [warp-field-coils](https://github.com/arcticoder/warp-field-coils): Primary integration for FTL warp field operations requiring artificial gravity for safety-critical applications.
-- [lqg-ftl-metric-engineering](https://github.com/arcticoder/lqg-ftl-metric-engineering): Critical safety coordination for FTL operations using artificial gravity for inertial compensation.
-- [unified-lqg](https://github.com/arcticoder/unified-lqg): Core LQG framework providing quantum geometry foundation for artificial gravity field generation.
-- [negative-energy-generator](https://github.com/arcticoder/negative-energy-generator): Integrated energy source for artificial gravity generation with 242M× efficiency enhancement.
+- [energy](https://github.com/arcticoder/energy): Central meta-repo for energy, quantum, and artificial gravity research; referenced here for reproducibility artifacts and cross-repo examples.
+- [enhanced-simulation-hardware-abstraction-framework](https://github.com/arcticoder/enhanced-simulation-hardware-abstraction-framework): Simulation and hardware-abstraction code used for digital-twin experiments in this workspace.
+- [warp-field-coils](https://github.com/arcticoder/warp-field-coils): Integration examples for field hardware in simulation contexts.
+- [lqg-ftl-metric-engineering](https://github.com/arcticoder/lqg-ftl-metric-engineering): Research code exploring metric engineering; referenced here for experimental integration tests.
+- [unified-lqg](https://github.com/arcticoder/unified-lqg): Core LQG model and numerical workflows used in example calculations.
+- [negative-energy-generator](https://github.com/arcticoder/negative-energy-generator): Research repository linked for cross-repo benchmarking in the workspace.
 
-All repositories are part of the [arcticoder](https://github.com/arcticoder) ecosystem and link back to the energy framework for unified documentation and integration.
+All repository references and numerical figures in this README summarize model-derived results, demonstration runs, or planned integration work. The codebase is intended as a research/testbed resource; it is not a production control system and does not by itself constitute validated operational hardware.
 
-## 🌌 LQG Enhanced Artificial Gravity - PRODUCTION DEPLOYED ✅
+## Summary — Research-Stage Results and Caveats
 
-**Status**: ✅ **PRODUCTION READY** - LQG implementation **COMPLETE and DEPLOYED**  
-**Achievement**: β = 1.944 backreaction factor **OPERATIONAL**  
-**Performance**: 94% efficiency improvement **ACHIEVED**  
-**Energy**: 242M× energy reduction **IMPLEMENTED** (1 MW → 2 mW)  
-**Integration**: Enhanced Simulation Framework **INTEGRATED** with 94% compatibility  
-**UQ Resolution**: 5/5 critical concerns **RESOLVED** with 94.2% validation score  
+This repository provides example implementations, analysis scripts, and integration tests intended to support reproducible research into LQG-informed artificial gravity models. Reported numbers (efficiency improvements, energy factors, timings) are outputs from specific simulation configurations and may not generalize outside the stated assumptions.
+
+- Numerical claims depend on solver parameters, boundary conditions, and input datasets; full reproduction steps, environment details, and raw outputs (when available) are in `docs/benchmarks.md` and `docs/UQ-notes.md`.
+- Statements implying deployment, production readiness, or immediate real-world capability are intentionally avoided. Any operational use requires independent verification, peer review, and comprehensive V&V.
+- For public summaries, prefer conservative phrasing and link to reproducibility artifacts; contact maintainers for clarifications or replication instructions.
 
 ### 🚀 Phase 1 Implementation Achievements
 
