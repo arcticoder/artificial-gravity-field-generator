@@ -11,6 +11,13 @@
 
 All repository references and numerical figures in this README summarize model-derived results, demonstration runs, or planned integration work. The codebase is intended as a research/testbed resource; it is not a production control system and does not by itself constitute validated operational hardware.
 
+## Scope, Validation & Limitations
+
+- **Research-stage results:** Content in this README and linked artifacts are research outputs and demonstration results. Treat numerical values and performance claims as provisional model- or simulation-derived findings rather than validated engineering specifications.
+- **Reproducibility:** Reproduction steps, environment details, and raw outputs (where available) are linked from `docs/benchmarks.md` and `docs/UQ-notes.md`. If a claim lacks an explicit UQ artifact, consider it provisional and prioritize reproduction and independent verification.
+- **Uncertainty & assumptions:** Many results depend on solver settings, boundary conditions, and selected parameter sweeps. Review the referenced configuration files and UQ materials before using reported numbers for downstream design or decision-making.
+- **Safety & compliance:** This repository contains research code and analysis; it is not a certified safety system. Any physical experimentation or hardware integration requires formal V&V, compliance review, and institutional approvals.
+
 ## Summary — Research-Stage Results and Caveats
 
 This repository provides example implementations, analysis scripts, and integration tests intended to support reproducible research into LQG-informed artificial gravity models. Reported numbers (efficiency improvements, energy factors, timings) are outputs from specific simulation configurations and may not generalize outside the stated assumptions.
@@ -29,13 +36,11 @@ This repository provides example implementations, analysis scripts, and integrat
 - **sinc(πμ) polymer corrections** active with optimal μ = 0.2 parameter
 - **V_min volume quantization** providing unprecedented quantum geometric precision
 
-#### Practical Deployment Ready ✅
-- **Power consumption**: Reduced from 1 MW to 0.002 W (practical for spacecraft)
-- **Medical safety**: 10¹² biological protection factor achieved
-- **Field precision**: 1mm spatial control demonstrated
-- **Response time**: <1ms emergency shutdown capability
-- **Field strength**: 0.1g to 2.0g artificial gravity range
-- **Spatial extent**: Up to 8m radius crew areas supported  
+#### Implementation Notes (research-stage)
+- **Power consumption (model-derived):** Reports of reduced power consumption (e.g., model cases showing reductions to ~0.002 W) are outcomes of specific simulation configurations and should be validated against hardware tests before being treated as operational metrics.
+- **Medical safety:** Reported biological protection factors and safety metrics are estimated from model assumptions; any human-subject or safety-critical application requires independent review and regulatory approval.
+- **Field precision & response:** Spatial control and temporal response numbers are simulation- or testbed-derived; confirm with hardware-in-the-loop and calibrated instrumentation prior to deployment.
+- **Field strength & extent:** Reported ranges for artificial gravity fields reflect modeled scenarios; operational capability depends on hardware constraints, integration, and validated control systems.
 
 ---
 
@@ -61,7 +66,7 @@ All repositories are part of the [arcticoder](https://github.com/arcticoder) eco
 
 ## 🔗 Enhanced Simulation Framework Integration
 
-### **Revolutionary Digital Twin Validation**
+### **Digital Twin Integration (research-stage)**
 
 The artificial gravity field generator is now **fully integrated** with the Enhanced Simulation Hardware Abstraction Framework, providing:
 
