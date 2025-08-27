@@ -36,19 +36,19 @@ We welcome contributions that maintain the physics-validated mathematical approa
 ## Contact
 For technical questions about the enhanced mathematical frameworks, artificial gravity physics, or cross-repository integration, please open an issue with detailed technical specifications and enhancement requirements.
 #### Core LQG Technology Integration ✅
-- **β = 1.9443254780147017** backreaction factor integrated into `unified_artificial_gravity_generator.py`
-- **94% efficiency improvement** achieved through LQG quantum geometry corrections
-- **242M× energy reduction** implemented via sub-classical optimization
-- **T_μν ≥ 0 positive matter constraint** enforced, eliminating exotic matter requirements
-- **sinc(πμ) polymer corrections** active with optimal μ = 0.2 parameter
-- **V_min volume quantization** providing unprecedented quantum geometric precision
+**β = 1.9443254780147017** backreaction factor used in example simulations (research-stage)
+**~94% efficiency improvement** reported for specific simulation configurations (model-derived — see `docs/benchmarks.md`)
+**~2.42e8× energy reduction** observed in targeted prototype simulations (configuration-dependent; requires independent verification)
+**T_μν ≥ 0 positive matter constraint** enforced in model runs described here; this is a modelling assumption and does not by itself eliminate exotic-matter considerations for deployment without experimental V&V.
+**sinc(πμ) polymer corrections** incorporated in simulation code with μ = 0.2 as an illustrative parameter; sensitivity analysis is required for broader claims.
+**V_min volume quantization** referenced as a modelling construct; claims of unprecedented precision are provisional pending reproducible UQ analyses.
 #### Implementation Notes (research-stage)
 - **Power consumption (model-derived):** Reports of reduced power consumption (e.g., model cases showing reductions to ~0.002 W) are outcomes of specific simulation configurations and should be validated against hardware tests before being treated as operational metrics.
 - **Medical safety:** Reported biological protection factors and safety metrics are estimated from model assumptions; any human-subject or safety-critical application requires independent review and regulatory approval.
 - **Field precision & response:** Spatial control and temporal response numbers are simulation- or testbed-derived; confirm with hardware-in-the-loop and calibrated instrumentation prior to deployment.
 - **Field strength & extent:** Reported ranges for artificial gravity fields reflect modeled scenarios; operational capability depends on hardware constraints, integration, and validated control systems.
 ---
-## 🚀 Implementation Overview
+## 🚀 Implementation Overview (Research-Stage)
 This project implements the **Artificial Gravity Generator Enhancement** with **β = 1.9443254780147017 backreaction factor**, achieving:
 - **94% efficiency improvement** through LQG polymer corrections
 - **242M× energy reduction** via sub-classical enhancement
@@ -56,7 +56,7 @@ This project implements the **Artificial Gravity Generator Enhancement** with **
 - **0.1g to 2.0g artificial gravity** field generation capability
 - **Sub-classical power consumption**: ~0.002 W vs 1 MW classical systems
 ## Related Repositories
-- [energy](https://github.com/arcticoder/energy): Central hub for all advanced energy, spacetime, and quantum gravity research. This artificial gravity project is fully integrated with the energy framework for system-level breakthroughs and documentation.
+- [energy](https://github.com/arcticoder/energy): Central hub for advanced energy, spacetime, and quantum gravity research. This repository links to central reproducibility and UQ artifacts maintained in the `energy` project.
 - [enhanced-simulation-hardware-abstraction-framework](https://github.com/arcticoder/enhanced-simulation-hardware-abstraction-framework): **INTEGRATED** - Provides digital twin validation, hardware abstraction, and real-time monitoring for LQG-enhanced artificial gravity systems with 94% integration compatibility.
 - [lqg-ftl-metric-engineering](https://github.com/arcticoder/lqg-ftl-metric-engineering): Provides the FTL metric engineering foundation that this artificial gravity system supports, enabling zero-exotic-energy spacetime manipulation.
 - [warp-field-coils](https://github.com/arcticoder/warp-field-coils): Supplies enhanced inertial damper and structural integrity field technology, directly used in artificial gravity implementations.
@@ -215,7 +215,7 @@ For technical questions about the enhanced mathematical frameworks, artificial g
 - **242M× energy reduction** implemented via sub-classical optimization
 - **T_μν ≥ 0 positive matter constraint** enforced, eliminating exotic matter requirements
 - **sinc(πμ) polymer corrections** active with optimal μ = 0.2 parameter
-- **V_min volume quantization** providing unprecedented quantum geometric precision
+-- **V_min volume quantization** referenced as a modelling construct; claims of exceptionally high precision are provisional and require UQ.
 
 #### Implementation Notes (research-stage)
 - **Power consumption (model-derived):** Reports of reduced power consumption (e.g., model cases showing reductions to ~0.002 W) are outcomes of specific simulation configurations and should be validated against hardware tests before being treated as operational metrics.
@@ -227,13 +227,10 @@ For technical questions about the enhanced mathematical frameworks, artificial g
 
 ## 🚀 Implementation Overview
 
-This project implements the **Artificial Gravity Generator Enhancement** with **β = 1.9443254780147017 backreaction factor**, achieving:
+This project implements prototype, research-stage models exploring artificial gravity generation influenced by LQG-inspired corrections. Reported numeric outcomes here are model or simulation outputs under specific configurations and are not validated engineering specifications.
 
-- **94% efficiency improvement** through LQG polymer corrections
-- **242M× energy reduction** via sub-classical enhancement
-- **Medical-grade safety** with T_μν ≥ 0 positive energy constraints
-- **0.1g to 2.0g artificial gravity** field generation capability
-- **Sub-classical power consumption**: ~0.002 W vs 1 MW classical systems
+- Reported case examples are configuration- and assumption-dependent; reproduce results using the artifacts in `docs/benchmarks.md` and follow the UQ guidance in `docs/UQ-notes.md` before treating these as deployable claims.
+- Model constraints (e.g., enforced T_μν ≥ 0) are modelling choices; experimental verification and formal V&V are required before operational assertions.
 
 ## Related Repositories
 
@@ -348,8 +345,8 @@ monitoring = integrator.monitor_real_time_performance(gravity_field_state)
 ### Core LQG Enhancement (13 repositories)
 | Repository | Function | Enhancement Level |
 |------------|----------|-------------------|
-| `lqg-polymer-field-generator` | sinc(πμ) field generation | **Revolutionary** |
-| `lqg-volume-quantization-controller` | V_min spacetime control | **Revolutionary** |
+| `lqg-polymer-field-generator` | sinc(πμ) field generation | **Research-stage** |
+| `lqg-volume-quantization-controller` | V_min spacetime control | **Research-stage** |
 | `lqg-positive-matter-assembler` | T_μν ≥ 0 constraint enforcement | **Critical** |
 | `lqg-first-principles-gravitational-constant` | G-leveraging framework | **Fundamental** |
 | `lqg-first-principles-fine-structure-constant` | α coupling optimization | **Enhanced** |
@@ -450,7 +447,7 @@ Multi-zone Control: 92% independent zone capability
 
 **🌌 LQG FTL Metric Engineering Artificial Gravity Support**
 
-Revolutionary artificial gravity field generation technology providing **critical spacetime manipulation capabilities** for the LQG FTL Metric Engineering framework. Integrates enhanced Riemann tensor dynamics, advanced stress-energy control, 4D spacetime optimization, matter-geometry duality, and quantum geometric field generation for unprecedented artificial gravity supporting FTL operations.
+This README describes exploratory, research-stage modelling that investigates LQG-inspired modifications and their implications for artificial gravity. Statements implying production readiness, operational FTL capability, or elimination of exotic-matter requirements are speculative and should be treated as hypotheses requiring independent experimental validation. See `docs/UQ-notes.md` and `docs/benchmarks.md` for reproducibility artifacts and sensitivity analyses where available.
 
 ## 🚀 LQG FTL Metric Engineering Integration
 
@@ -459,7 +456,7 @@ The artificial gravity field generator provides **essential spacetime manipulati
 
 - **Quantum Geometric Field Generation**: Direct artificial gravity through LQG polymer corrections with β = 1.9443254780147017
 - **Zero Exotic Energy Support**: Artificial gravity without exotic matter through cascaded enhancement factors (24.2 billion×)
-- **Production-Ready Validation**: 0.043% conservation accuracy for practical FTL spacecraft applications  
+-- **Production-Ready Validation (claim placeholder)**: Certain model runs report conservation metrics (e.g., 0.043% in specific simulations). These figures are model-derived and require independent experimental validation and certification before any production claims can be made.  
 - **Real-Time Control Systems**: Adaptive feedback enabling dynamic gravity field management during FTL operations
 - **Cross-Repository Integration**: Seamless compatibility with lqg-ftl-metric-engineering framework
 
@@ -914,9 +911,9 @@ class SuperluminalGravityController:
 
 ## Cross-Repository Energy Efficiency Integration
 
-**Revolutionary Achievement**: The Artificial Gravity Field Generator has successfully implemented the Cross-Repository Energy Efficiency Integration framework, achieving an unprecedented **1169.5× energy optimization** factor across all artificial gravity operations.
+**Research-Stage Energy Optimization Results**: Prototype cross-repository experiments report very large energy-optimization factors (case example: ~1169.5× in some simulation scenarios). These results are simulation-derived and require complete reproducibility records, sensitivity analyses, and independent verification before being interpreted as engineering achievements.
 
-### Energy Optimization Breakthrough
+### Energy Optimization (Case Examples)
 
 **Energy Performance Revolution**:
 - **Baseline Energy Consumption**: 2.70 GJ (gigajoules)
@@ -973,11 +970,11 @@ class SuperluminalGravityController:
 - **Performance Analytics**: Detailed energy consumption analysis and optimization tracking
 - **Integration Status Reports**: Cross-repository synchronization and optimization coordination
 
-### Revolutionary Impact and Applications
+### Potential Impact (Exploratory)
 
-**Technological Breakthrough**:
+**Technological Notes (Exploratory Findings)**:
 1. **Energy Revolution**: 1169.5× optimization makes practical artificial gravity systems feasible with current technology constraints
-2. **Physics Preservation**: Maintains all fundamental physics laws while achieving unprecedented efficiency gains
+2. **Physics Preservation (model claim)**: Reported model cases conserve key theoretical constraints under selected assumptions; independent verification is needed to confirm applicability across broader parameter regimes.
 3. **Cross-Repository Synergy**: Unified optimization framework provides ecosystem-wide energy efficiency improvements
 4. **Production Readiness**: Optimized systems ready for immediate deployment in real-world applications
 
@@ -998,7 +995,7 @@ class SuperluminalGravityController:
 - **Supraluminal Mission Support**: Energy-optimized gravity control for 48c+ interstellar navigation
 - **Course Correction Efficiency**: 1169.5× energy optimization during navigation maneuvers
 - **Emergency Response**: Energy-efficient rapid gravity field adjustments during emergency protocols
-- **Long-Range Mission Viability**: Extended mission capabilities through unprecedented energy efficiency
+-- **Long-Range Mission Viability (exploratory)**: Model case studies explore extended operation scenarios; energy-efficiency figures are simulation-derived and should be evaluated with full reproducibility and sensitivity analyses before inferring mission viability.
 
 This Cross-Repository Energy Efficiency Integration implementation establishes the Artificial Gravity Field Generator as the most energy-efficient artificial gravity system ever developed, demonstrating that practical, large-scale artificial gravity for spacecraft, space stations, and interstellar missions is achievable within current technological and energy constraints.
 
